@@ -1,0 +1,13 @@
+{
+  "schema": "yourSchema",
+  "appDelegate": "PROJECTImpl",
+  "tabManager": "TYModuleTabManager",
+  "tabs": [
+      "YourTestModule",
+      "TYGuideModuleImpl",
+  ],
+  "tabSelect": "TYGuideModuleImpl",
+  "modules": [
+      
+  ]
+}
