@@ -1,6 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git' # cocoapods仓库
 source 'https://github.com/TuyaInc/TYPublicSpecs.git'   # 涂鸦的公开仓库
-# source 'TUYA_SPEC'    # 涂鸦的公开仓库
 # source 'GROUP_SPEC'
 
 

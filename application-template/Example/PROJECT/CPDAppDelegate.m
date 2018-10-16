@@ -2,8 +2,8 @@
 //  CPDAppDelegate.m
 //  PROJECT
 //
-//  Created by USER_NAME on TODAYS_DATE.
-//  Copyright (c) TODAYS_YEAR GROUP_NAME. All rights reserved.
+//  Created by ${USER_NAME} on ${TODAYS_DATE}.
+//  Copyright (c) ${TODAYS_YEAR} ${GROUP_NAME}. All rights reserved.
 //
 
 #import "CPDAppDelegate.h"
@@ -21,7 +21,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // 注册你的涂鸦sdk
-//    [[TuyaSmartSDK sharedInstance] startWithAppKey:@"your_tuya_app_key" secretKey:@"your_tuya_secret_key"];
+    /*
+    [[TuyaSmartSDK sharedInstance] startWithAppKey:@"your_tuya_app_key" secretKey:@"your_tuya_secret_key"];
+     */
+    
     
     /*
      调用TYModuleManager，启动模块化加载
@@ -34,7 +37,7 @@
 }
 
 /*
- 如果开发调试阶段需要其它的<UIAppDelegate>方法，你可以直接写在这里
+ 如果开发调试阶段需要其它的<UIApplicationDelegate>方法，你可以直接写在这里
  如果这些代码最终希望能够合并到涂鸦工程，请将代码写在你的Application模块中
  TYModuleManager在完成基础服务加载以后，会回调Application模块
  */
@@ -42,7 +45,7 @@
 #pragma mark - Forward
 /*
  将UIAppDelegate中的方法转发给application模块 (描述为"服务"会更准确，无需在意)
- 涂鸦工程的AppDelegate没有包含任何<UIAppDelegate>方法，所有<UIAppDelegate>方法均会转发
+ 涂鸦工程的AppDelegate没有包含任何<UIApplicationDelegate>方法，所有<UIApplicationDelegate>方法均会转发
  
  转发只发生在AppDelegate.m中找不到方法，实际上AppDelegate.m中方法优先级更高
  所以开发调试阶段的代码可以直接写在AppDelegate.m

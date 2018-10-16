@@ -11,9 +11,11 @@
 #import "TYModule.h"
 #import "TYModuleRouteRegisterProtocol.h"
 
+#import "TYModuleMainLoginProtocol.h"
+
 #import "YourLoginViewController.h"
 
-@interface PROJECTImpl () <TYModuleRouteRegisterProtocol>
+@interface PROJECTImpl () <TYModuleRouteRegisterProtocol, TYModuleMainLoginProtocol>
 
 @end
 
@@ -31,7 +33,10 @@
     return navi;
 }
 
-#pragma mark - <>
+#pragma mark - <TYModuleRouteRegisterProtocol>
+/*
+ 路由注册
+ */
 - (NSArray<NSString *> *)registModuleRoutes {
     
     // TODO: 返回你想要注册的路由

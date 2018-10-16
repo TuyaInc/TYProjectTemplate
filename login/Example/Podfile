@@ -1,6 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git' # cocoapods仓库
 source 'https://github.com/TuyaInc/TYPublicSpecs.git'   # 涂鸦的公开仓库
-# source 'TUYA_SPEC'    # 涂鸦的公开仓库
 # source 'GROUP_SPEC'
 
 
@@ -12,6 +11,8 @@ target 'PROJECT_Example' do
   pod 'TYModuleServices'    # 涂鸦的业务开放的服务
   
 #  pod 'TYModuleManagerExample'  # 一个示例demo
+
+  pod 'TYUIKit' # 涂鸦开放的UI组件，TYUIKit请确保写在Podfile内，因为涂鸦内部有其它库包含其内容
 
   target 'PROJECT_Tests' do
     inherit! :search_paths

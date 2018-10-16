@@ -28,7 +28,7 @@
     
     // 此处简单示意根据用户是否登录显式不同的rootVC
     UIViewController *rootVC;
-    BOOL userDidLogin = [[[NSUserDefaults standardUserDefaults] objectForKey:@"userIsLogin"] boolValue];;
+    BOOL userDidLogin = [[[NSUserDefaults standardUserDefaults] objectForKey:@"userIsLogin"] boolValue];
     if (!userDidLogin) {
         id loginModuleImpl = [[[TYModule configService] validClassOfConfigKeyPath:@"login"] new];
         UIViewController *loginVC = [loginModuleImpl mainLoginViewController];

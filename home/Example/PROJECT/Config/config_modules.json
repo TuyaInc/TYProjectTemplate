@@ -1,0 +1,14 @@
+{
+  "_comment": "这是你本地的配置文件，本地配置不影响最终打包",
+  "schema": "yourSchema",
+  "appDelegate": "YourApplicationModule",
+  "tabManager": "TYModuleTabManager",
+  "tabs": [
+      "PROJECTImpl",
+      "TYGuideModuleImpl",
+  ],
+  "tabSelect": "TYGuideModuleImpl",
+  "modules": [
+      
+  ]
+}
