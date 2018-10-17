@@ -4,10 +4,11 @@
   "tabManager": "TYModuleTabManager",
   "tabs": [
       "PROJECTImpl",
-      "TYGuideModuleImpl",
+      "TYGuideModuleImpl"
   ],
   "tabSelect": "TYGuideModuleImpl",
   "modules": [
       "PROJECTImpl",
+      "TYGuideModuleImpl"
   ]
 }

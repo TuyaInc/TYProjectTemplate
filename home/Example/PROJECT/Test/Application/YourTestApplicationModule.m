@@ -9,7 +9,7 @@
 
 #import "YourTestApplicationModule.h"
 
-#import "TYModule.h"
+#import "TYModuleManager.h"
 
 #import "TYModuleMainLoginProtocol.h"
 

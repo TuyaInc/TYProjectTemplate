@@ -1,6 +1,6 @@
 {
   "schema": "yourSchema",
-  "application": "YourApplicationModule",
+  "application": "YourTestApplicationModule",
   "tabManager": "TYModuleTabManager",
   "login": "PROJECTImpl",
   "tabs": [
@@ -9,7 +9,7 @@
   ],
   "tabSelect": "TYGuideModuleImpl",
   "modules": [
-      "TYGuideModuleImpl",
-      "PROJECTImpl"
+      "PROJECTImpl",
+      "TYGuideModuleImpl"
   ]
 }

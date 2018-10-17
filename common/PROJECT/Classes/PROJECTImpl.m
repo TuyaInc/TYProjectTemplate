@@ -12,7 +12,7 @@
 
 #import "TPNavigationController.h"
 
-#import "YourHomeViewController.h"
+#import "YourViewController.h"
 
 @interface PROJECTImpl () <TYModuleRouteRegisterProtocol, TYModuleTabRegisterProtocol>
 
@@ -49,7 +49,7 @@
     TYTabItemAttribute *tabAttr = [TYTabItemAttribute new];
     
     // 为tabItem配置viewController，根据需求自己包装navi
-    UIViewController *pageVC = [YourHomeViewController new];
+    UIViewController *pageVC = [YourViewController new];
     pageVC.title = @"HomePage";
     
     TPNavigationController *navi = [[TPNavigationController alloc] initWithRootViewController:pageVC];
@@ -67,7 +67,17 @@
     
     return @[tabAttr];
 }
-
 // tab相关回调，参考 <TYModuleTabRegisterProtocol>
+
+#pragma mark - <TYModuleNotifyRegisterProtocol>
+- (NSArray<NSString *> *)registRespondsNotifies {
+    return @[
+             NSStringFromSelector(@selector(your_notify_sel:)),
+             ];
+}
+
+- (void)your_notify_sel:(NSDictionary *)userInfo {
+    // TODO: 处理你注册的通知
+}
 
 @end

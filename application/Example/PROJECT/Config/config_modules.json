@@ -4,10 +4,10 @@
   "tabManager": "TYModuleTabManager",
   "tabs": [
       "YourTestModule",
-      "TYGuideModuleImpl",
+      "TYGuideModuleImpl"
   ],
   "tabSelect": "TYGuideModuleImpl",
   "modules": [
-      "TYGuideModuleImpl",
+      "TYGuideModuleImpl"
   ]
 }

@@ -6,13 +6,13 @@
 //  Copyright (c) ${TODAYS_YEAR} ${GROUP_NAME}. All rights reserved.
 //
 
-#import "YourApplicationModule.h"
+#import "YourTestApplicationModule.h"
 
-#import "TYModule.h"
+#import "TYModuleManager.h"
 
 #import "TYModuleMainLoginProtocol.h"
 
-@implementation YourApplicationModule
+@implementation YourTestApplicationModule
 /**
  相当于AppDelegate.m中的didFinishLaunching回调
  */
@@ -28,7 +28,7 @@
     
     // 此处简单示意根据用户是否登录显式不同的rootVC
     UIViewController *rootVC;
-    BOOL userDidLogin = [[[NSUserDefaults standardUserDefaults] objectForKey:@"userIsLogin"] boolValue];
+    BOOL userDidLogin = [[[NSUserDefaults standardUserDefaults] objectForKey:@"TestUserIsLogin"] boolValue];
     if (!userDidLogin) {
         id loginModuleImpl = [[[TYModule configService] validClassOfConfigKeyPath:@"login"] new];
         UIViewController *loginVC = [loginModuleImpl mainLoginViewController];

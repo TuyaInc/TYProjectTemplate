@@ -1,6 +1,6 @@
 //
 //  YourLoginViewController.m
-//  Pods-PROJECT_Example
+//  PROJECT
 //
 //  Created by ${USER_NAME} on ${TODAYS_DATE}.
 //  Copyright (c) ${TODAYS_YEAR} ${GROUP_NAME}. All rights reserved.
@@ -34,7 +34,7 @@
 }
 
 - (void)loginAction {
-    [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:@"userIsLogin"];
+    [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:@"TestUserIsLogin"];
     [[TYModule applicationService] reloadRootViewController];
 }
 

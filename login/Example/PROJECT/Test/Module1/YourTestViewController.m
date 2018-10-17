@@ -29,7 +29,7 @@
 }
 
 - (void)loginAction {
-    [[NSUserDefaults standardUserDefaults] setObject:@(NO) forKey:@"userIsLogin"];
+    [[NSUserDefaults standardUserDefaults] setObject:@(NO) forKey:@"TestUserIsLogin"];
     [[TYModule applicationService] reloadRootViewController];
 }
 

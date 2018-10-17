@@ -1,5 +1,5 @@
 //
-//  YourApplicationModule.h
+//  YourTestApplicationModule.h
 //  PROJECT
 //
 //  Created by ${USER_NAME} on ${TODAYS_DATE}.
@@ -13,6 +13,6 @@
 /**
  这是一个仅存在你本地的ApplicationModule
  */
-@interface YourApplicationModule : TYModuleApplication
+@interface YourTestApplicationModule : TYModuleApplication
 
 @end
