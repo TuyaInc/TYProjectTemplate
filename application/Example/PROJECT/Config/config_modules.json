@@ -1,6 +1,6 @@
 {
   "schema": "yourSchema",
-  "appDelegate": "PROJECTImpl",
+  "application": "PROJECTImpl",
   "tabManager": "TYModuleTabManager",
   "tabs": [
       "YourTestModule",

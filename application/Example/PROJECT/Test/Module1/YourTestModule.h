@@ -1,9 +1,9 @@
 //
 //  YourTestModule.h
-//  PROJECT_Example
+//  PROJECT
 //
-//  Created by 朱盼 on 2018/10/15.
-//  Copyright © 2018 GROUP_NAME. All rights reserved.
+//  Created by ${USER_NAME} on ${TODAYS_DATE}.
+//  Copyright (c) ${TODAYS_YEAR} ${GROUP_NAME}. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

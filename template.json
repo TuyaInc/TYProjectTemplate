@@ -1,0 +1,22 @@
+[
+    {
+        "type": "aplication",
+        "alias": "aplication",
+        "desc": "aplication模块",
+    },
+    {
+        "type": "login",
+        "alias": "login",
+        "desc": "登录模块",
+    },
+    {
+        "type": "home",
+        "alias": "home",
+        "desc": "首页模块",
+    },
+    {
+        "type": "userCenter",
+        "alias": "userCenter",
+        "desc": "个人中心模块",
+    },
+]
