@@ -1,5 +1,10 @@
 [
     {
+        "type": "common",
+        "alias": "common",
+        "desc": "通用模板"
+    },
+    {
         "type": "application",
         "alias": "application",
         "desc": "application模块"
@@ -18,10 +23,5 @@
         "type": "userCenter",
         "alias": "userCenter",
         "desc": "个人中心模块"
-    },
-    {
-        "type": "common",
-        "alias": "common",
-        "desc": "通用模板"
     }
 ]
