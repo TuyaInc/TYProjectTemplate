@@ -11,7 +11,8 @@
 		37C36AC02174574900E74199 /* config_modules.json in Resources */ = {isa = PBXBuildFile; fileRef = 37C36ABF2174574800E74199 /* config_modules.json */; };
 		37C36AC821746C6A00E74199 /* YourTestModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C36AC721746C6A00E74199 /* YourTestModule.m */; };
 		37C36ACF21747B0C00E74199 /* YourApplicationModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C36ACE21747B0C00E74199 /* YourApplicationModule.m */; };
-		37C36ADB217483B900E74199 /* YourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C36ADA217483B900E74199 /* YourViewController.m */; };
+		37C36ADB217483B900E74199 /* YourTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C36ADA217483B900E74199 /* YourTestViewController.m */; };
+		37FBFDC6217719D8004910C3 /* config_modules字段简介.md in Resources */ = {isa = PBXBuildFile; fileRef = 37FBFDC5217719D8004910C3 /* config_modules字段简介.md */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -47,8 +48,9 @@
 		37C36AC721746C6A00E74199 /* YourTestModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YourTestModule.m; sourceTree = "<group>"; };
 		37C36ACD21747B0C00E74199 /* YourApplicationModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YourApplicationModule.h; sourceTree = "<group>"; };
 		37C36ACE21747B0C00E74199 /* YourApplicationModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YourApplicationModule.m; sourceTree = "<group>"; };
-		37C36AD9217483B900E74199 /* YourViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YourViewController.h; sourceTree = "<group>"; };
-		37C36ADA217483B900E74199 /* YourViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YourViewController.m; sourceTree = "<group>"; };
+		37C36AD9217483B900E74199 /* YourTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YourTestViewController.h; sourceTree = "<group>"; };
+		37C36ADA217483B900E74199 /* YourTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YourTestViewController.m; sourceTree = "<group>"; };
+		37FBFDC5217719D8004910C3 /* config_modules字段简介.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "config_modules字段简介.md"; sourceTree = "<group>"; };
 		3DED22E876908D1944E32E8F /* Pods-PROJECT_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PROJECT_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PROJECT_Example/Pods-PROJECT_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		42AD1EE96E549773E31E690C /* libPods-PROJECT_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PROJECT_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C18EF820255E68CCE1FB72D /* Pods-PROJECT_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PROJECT_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PROJECT_Tests/Pods-PROJECT_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		37C36AB621744F9100E74199 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				37FBFDC5217719D8004910C3 /* config_modules字段简介.md */,
 				37C36ABF2174574800E74199 /* config_modules.json */,
 			);
 			path = Config;
@@ -133,8 +136,8 @@
 			children = (
 				37C36AC621746C6A00E74199 /* YourTestModule.h */,
 				37C36AC721746C6A00E74199 /* YourTestModule.m */,
-				37C36AD9217483B900E74199 /* YourViewController.h */,
-				37C36ADA217483B900E74199 /* YourViewController.m */,
+				37C36AD9217483B900E74199 /* YourTestViewController.h */,
+				37C36ADA217483B900E74199 /* YourTestViewController.m */,
 			);
 			path = Module1;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
+				C924B12DD1B67EF1248E76A7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -319,6 +323,7 @@
 				37C36AB521744E1400E74199 /* PROJECT.podspec in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				37C36AC02174574900E74199 /* config_modules.json in Resources */,
+				37FBFDC6217719D8004910C3 /* config_modules字段简介.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +382,34 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C924B12DD1B67EF1248E76A7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PROJECT_Example/Pods-PROJECT_Example-resources.sh",
+				"${PODS_ROOT}/TYModuleManagerExample/TYModuleManagerExample/Assets/tab_guide_icon@2x.png",
+				"${PODS_ROOT}/TYModuleManagerExample/TYModuleManagerExample/Assets/tab_guide_Icon@3x.png",
+				"${PODS_ROOT}/TYModuleManagerExample/TYModuleManagerExample/Assets/TYModuleManager_Guide.md",
+				"${PODS_ROOT}/TYModuleManagerExample/TYModuleManagerExample/Assets/TYServicesExample.storyboard",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/tab_guide_icon@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/tab_guide_Icon@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYModuleManager_Guide.md",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYServicesExample.storyboardc",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PROJECT_Example/Pods-PROJECT_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -388,7 +421,7 @@
 				37C36AC821746C6A00E74199 /* YourTestModule.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				37C36ACF21747B0C00E74199 /* YourApplicationModule.m in Sources */,
-				37C36ADB217483B900E74199 /* YourViewController.m in Sources */,
+				37C36ADB217483B900E74199 /* YourTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,13 +2,13 @@
 //  YourLoginViewController.m
 //  Pods-PROJECT_Example
 //
-//  Created by USER_NAME on TODAYS_DATE.
-//  Copyright (c) TODAYS_YEAR GROUP_NAME. All rights reserved.
+//  Created by ${USER_NAME} on ${TODAYS_DATE}.
+//  Copyright (c) ${TODAYS_YEAR} ${GROUP_NAME}. All rights reserved.
 //
 
 #import "YourLoginViewController.h"
 
-#import "TYModule.h"
+#import "TYModuleManager.h"
 
 @interface YourLoginViewController ()
 
@@ -20,6 +20,8 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.title = @"LoginPage";
     
     UIButton *loginBtn = [UIButton new];
     [loginBtn setTitle:@"login" forState:UIControlStateNormal];

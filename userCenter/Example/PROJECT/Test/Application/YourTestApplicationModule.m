@@ -2,17 +2,17 @@
 //  YourApplicationModule.m
 //  PROJECT_Example
 //
-//  Created by USER_NAME on TODAYS_DATE.
-//  Copyright (c) TODAYS_YEAR GROUP_NAME. All rights reserved.
+//  Created by ${USER_NAME} on ${TODAYS_DATE}.
+//  Copyright (c) ${TODAYS_YEAR} ${GROUP_NAME}. All rights reserved.
 //
 
-#import "YourApplicationModule.h"
+#import "YourTestApplicationModule.h"
 
-#import "TYModule.h"
+#import "TYModuleManager.h"
 
 #import "TYModuleMainLoginProtocol.h"
 
-@implementation YourApplicationModule
+@implementation YourTestApplicationModule
 /**
  相当于AppDelegate.m中的didFinishLaunching回调
  */
@@ -32,7 +32,7 @@
     if (!userDidLogin) {
         id loginModuleImpl = [[[TYModule configService] validClassOfConfigKeyPath:@"login"] new];
         UIViewController *loginVC = [loginModuleImpl mainLoginViewController];
-        loginVC.title = @"YourLoginVC";
+        loginVC.title = @"LoginVC";
     
         rootVC = loginVC;
     } else {

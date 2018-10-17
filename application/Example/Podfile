@@ -7,6 +7,9 @@ target 'PROJECT_Example' do
   
   # 当前正在开发的模块，以本地路径方式引入工程，方便与其它库统一管理方式
   pod 'PROJECT', :path => '../'
+  
+  # 涂鸦开放的UI组件，请不要将TYUIKit添加到podspec，涂鸦的内部组件已经包含TYUIKit
+  pod 'TYUIKit'
 
   # 一个示例demo
   pod 'TYModuleManagerExample'

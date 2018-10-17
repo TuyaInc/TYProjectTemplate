@@ -2,16 +2,17 @@
 //  PROJECTImpl.m
 //  Pods-PROJECT_Example
 //
-//  Created by USER_NAME on TODAYS_DATE.
-//  Copyright (c) TODAYS_YEAR GROUP_NAME. All rights reserved.
+//  Created by ${USER_NAME} on ${TODAYS_DATE}.
+//  Copyright (c) ${TODAYS_YEAR} ${GROUP_NAME}. All rights reserved.
 //
 
 #import "PROJECTImpl.h"
 
-#import "TYModule.h"
-#import "TYModuleRouteRegisterProtocol.h"
+#import "TYModuleManager.h"
 
 #import "TYModuleMainLoginProtocol.h"
+
+#import "TPNavigationController.h"
 
 #import "YourLoginViewController.h"
 
@@ -28,14 +29,14 @@
     
     UIViewController *loginVC = [YourLoginViewController new];
     
-    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    TPNavigationController *navi = [[TPNavigationController alloc] initWithRootViewController:loginVC];
     
     return navi;
 }
 
 #pragma mark - <TYModuleRouteRegisterProtocol>
 /*
- 路由注册
+ 路由注册, 注册路由的模块需要添加到config_modules.json的modules中
  */
 - (NSArray<NSString *> *)registModuleRoutes {
     

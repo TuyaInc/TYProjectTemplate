@@ -2,8 +2,8 @@
 //  CPDAppDelegate.m
 //  PROJECT
 //
-//  Created by USER_NAME on TODAYS_DATE.
-//  Copyright (c) TODAYS_YEAR GROUP_NAME. All rights reserved.
+//  Created by ${USER_NAME} on ${TODAYS_DATE}.
+//  Copyright (c) ${TODAYS_YEAR} ${GROUP_NAME}. All rights reserved.
 //
 
 #import "CPDAppDelegate.h"
@@ -22,14 +22,8 @@
     
     // 注册你的涂鸦sdk
     /*
-    [[TuyaSmartSDK sharedInstance] startWithAppKey:@"your_tuya_app_key" secretKey:@"your_tuya_secret_key"];
+     [[TuyaSmartSDK sharedInstance] startWithAppKey:@"your_tuya_app_key" secretKey:@"your_tuya_secret_key"];
      */
-    
-    // TODO: 登录
-    // 在模块demo的开发调试阶段，你可以直接在appDelegate中使用代码登录，登录成功后再 启动TYModuleManager
-    // 如果你希望联调登录模块，这里不需要执行登录，直接启动TYModuleManager，然后在YourApplicationModule中处理登录
-    
-    // login success
     
     /*
      调用TYModuleManager，启动模块化加载

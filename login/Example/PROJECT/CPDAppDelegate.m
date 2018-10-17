@@ -2,8 +2,8 @@
 //  CPDAppDelegate.m
 //  PROJECT
 //
-//  Created by USER_NAME on TODAYS_DATE.
-//  Copyright (c) TODAYS_YEAR GROUP_NAME. All rights reserved.
+//  Created by ${USER_NAME} on ${TODAYS_DATE}.
+//  Copyright (c) ${TODAYS_YEAR} ${GROUP_NAME}. All rights reserved.
 //
 
 #import "CPDAppDelegate.h"
@@ -22,7 +22,7 @@
     
     // 注册你的涂鸦sdk
     /*
-    [[TuyaSmartSDK sharedInstance] startWithAppKey:@"your_tuya_app_key" secretKey:@"your_tuya_secret_key"];
+     [[TuyaSmartSDK sharedInstance] startWithAppKey:@"your_tuya_app_key" secretKey:@"your_tuya_secret_key"];
      */
     
     

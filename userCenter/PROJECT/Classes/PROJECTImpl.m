@@ -1,16 +1,14 @@
 //
 //  PROJECTImpl.m
-//  Pods-PROJECT_Example
+//  PROJECT
 //
-//  Created by USER_NAME on TODAYS_DATE.
-//  Copyright (c) TODAYS_YEAR GROUP_NAME. All rights reserved.
+//  Created by ${USER_NAME} on ${TODAYS_DATE}.
+//  Copyright (c) ${TODAYS_YEAR} ${GROUP_NAME}. All rights reserved.
 //
 
 #import "PROJECTImpl.h"
 
-#import "TYModule.h"
-#import "TYModuleRouteRegisterProtocol.h"
-#import "TYModuleTabRegisterProtocol.h"
+#import "TYModuleManager.h"
 
 #import "TPNavigationController.h"
 
@@ -52,7 +50,7 @@
     
     // 为tabItem配置viewController，根据需求自己包装navi
     UIViewController *pageVC = [YourUserCenterViewController new];
-    pageVC.title = @"Center Page";
+    pageVC.title = @"CenterPage";
     
     TPNavigationController *navi = [[TPNavigationController alloc] initWithRootViewController:pageVC];
     tabAttr.viewController = navi;

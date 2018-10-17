@@ -1,6 +1,6 @@
 //
-//  YourApplicationModule.h
-//  PROJECT
+//  YourTestApplicationModule.h
+//  PROJECT_Example
 //
 //  Created by ${USER_NAME} on ${TODAYS_DATE}.
 //  Copyright (c) ${TODAYS_YEAR} ${GROUP_NAME}. All rights reserved.
@@ -13,6 +13,6 @@
 /**
  这是一个仅存在你本地的ApplicationModule
  */
-@interface YourApplicationModule : TYModuleApplication
+@interface YourTestApplicationModule : TYModuleApplication
 
 @end

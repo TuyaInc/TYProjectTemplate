@@ -1,16 +1,16 @@
 //
-//  YourTestModule.h
+//  YourTestViewController.h
 //  PROJECT
 //
 //  Created by ${USER_NAME} on ${TODAYS_DATE}.
 //  Copyright (c) ${TODAYS_YEAR} ${GROUP_NAME}. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YourTestModule : NSObject
+@interface YourTestViewController : UIViewController
 
 @end
 

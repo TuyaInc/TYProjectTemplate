@@ -1,18 +1,19 @@
 //
 //  YourApplicationModule.m
-//  PROJECT_Example
+//  PROJECT
 //
-//  Created by USER_NAME on TODAYS_DATE.
-//  Copyright (c) TODAYS_YEAR GROUP_NAME. All rights reserved.
+//  Created by ${USER_NAME} on ${TODAYS_DATE}.
+//  Copyright (c) ${TODAYS_YEAR} ${GROUP_NAME}. All rights reserved.
+
 //
 
-#import "YourApplicationModule.h"
+#import "YourTestApplicationModule.h"
 
 #import "TYModule.h"
 
 #import "TYModuleMainLoginProtocol.h"
 
-@implementation YourApplicationModule
+@implementation YourTestApplicationModule
 /**
  相当于AppDelegate.m中的didFinishLaunching回调
  */
