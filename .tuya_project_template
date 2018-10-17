@@ -1,8 +1,8 @@
 [
     {
-        "type": "aplication",
-        "alias": "aplication",
-        "desc": "aplication模块"
+        "type": "application",
+        "alias": "application",
+        "desc": "application模块"
     },
     {
         "type": "login",
