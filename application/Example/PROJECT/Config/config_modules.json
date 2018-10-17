@@ -8,6 +8,6 @@
   ],
   "tabSelect": "TYGuideModuleImpl",
   "modules": [
-      
+      "TYGuideModuleImpl",
   ]
 }
