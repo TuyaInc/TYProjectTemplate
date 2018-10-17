@@ -18,5 +18,10 @@
         "type": "userCenter",
         "alias": "userCenter",
         "desc": "个人中心模块"
+    },
+    {
+        "type": "common",
+        "alias": "common",
+        "desc": "通用模板"
     }
 ]
