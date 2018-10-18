@@ -8,6 +8,7 @@
   ],
   "tabSelect": "TYGuideModuleImpl",
   "modules": [
-      "TYGuideModuleImpl"
+      "TYGuideModuleImpl",
+      "TYNotifyModuleImpl"
   ]
 }
