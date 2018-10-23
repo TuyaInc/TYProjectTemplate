@@ -21,6 +21,7 @@ Pod::Spec.new do |s|
     s.dependency 'TYModuleManager'    # 涂鸦的模块化工具
     s.dependency 'TuyaSmartHomeKit'   # 涂鸦智能SDK
     s.dependency 'TYModuleServices'   # 涂鸦的业务开放的服务，如果未使用，可以去除
+    s.dependency 'TYUIKit'            # 涂鸦开放的UI组件，如果未使用，可以去除
     
     # s.dependency 'Masonry'
     
