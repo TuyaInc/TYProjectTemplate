@@ -1,12 +1,12 @@
 //
-//  CPDAppDelegate.m
+//  AppDelegate.m
 //  PROJECT
 //
 //  Created by ${USER_NAME} on ${TODAYS_DATE}.
 //  Copyright (c) ${TODAYS_YEAR} ${GROUP_NAME}. All rights reserved.
 //
 
-#import "CPDAppDelegate.h"
+#import "AppDelegate.h"
 
 #import "TYModuleManager.h"
 
@@ -16,7 +16,7 @@
  
  涂鸦工程中已经包含了SDK的注册逻辑，它会在打包时被正确配置，所以你的SDK注册代码属于开发调试阶段代码
  */
-@implementation CPDAppDelegate
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     

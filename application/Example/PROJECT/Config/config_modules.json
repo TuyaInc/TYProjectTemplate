@@ -1,5 +1,5 @@
 {
-  "schema": "yourSchema",
+  "scheme": "yourScheme",
   "application": "PROJECTImpl",
   "tabManager": "TYModuleTabManager",
   "tabs": [

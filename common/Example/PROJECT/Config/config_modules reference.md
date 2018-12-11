@@ -2,8 +2,10 @@
 
 config_modules.json是涂鸦模块化以后，模块配置的文件。关于[涂鸦模块化](https://tuyainc.github.io/2018/10/12/TYModuleManager%E5%AE%A2%E6%88%B7%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/)
 
-- schema 项
+- scheme 项
 
+  key名使用 "schema" 也能兼容
+  
   务必配置。影响远程唤醒，例如在safari用url唤醒app
 
 - application 项
