@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
     
     # 源文件
     s.source_files = 'PROJECT/Classes/**/*'
+    
     # 资源文件
     # s.resources = ['PROJECT/Assets/*.{png,xib,storyboard,md,plist,xcassets,bundle}']
     
