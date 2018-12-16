@@ -1,39 +1,42 @@
-[
-    {
-        "type": "common",
-        "alias": "common",
-        "desc": "通用模板"
-    },
-    {
-        "type": "application",
-        "alias": "application",
-        "desc": "application模块"
-    },
-    {
-        "type": "login",
-        "alias": "login",
-        "desc": "登录模块"
-    },
-    {
-        "type": "home",
-        "alias": "home",
-        "desc": "首页模块",
-        "sub_types": [
-            {
-                "type": "home",
-                "alias": "home",
-                "desc": "首页模块(不基于骨架开发)"
-            },
-            {
-                "type": "home_skeleton_1",
-                "alias": "home_skeleton_1",
-                "desc": "首页模块(基于第一套骨架)"
-            }
-        ]
-    },
-    {
-        "type": "userCenter",
-        "alias": "userCenter",
-        "desc": "个人中心模块"
-    }
-]
+{
+    "last_version": "3.7.0",
+    "templates": [
+        {
+            "type": "common",
+            "alias": "common",
+            "desc": "通用模板"
+        },
+        {
+            "type": "application",
+            "alias": "application",
+            "desc": "application模块"
+        },
+        {
+            "type": "login",
+            "alias": "login",
+            "desc": "登录模块"
+        },
+        {
+            "type": "home",
+            "alias": "home",
+            "desc": "首页模块",
+            "sub_types": [
+                {
+                    "type": "home",
+                    "alias": "home",
+                    "desc": "首页模块(不基于骨架开发)"
+                },
+                {
+                    "type": "home_skeleton_1",
+                    "alias": "home_skeleton_1",
+                    "desc": "首页模块(基于第一套骨架)"
+                }
+            ]
+        },
+        {
+            "type": "userCenter",
+            "alias": "userCenter",
+            "desc": "个人中心模块"
+        }
+    ]
+}
