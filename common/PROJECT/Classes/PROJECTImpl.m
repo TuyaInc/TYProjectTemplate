@@ -8,9 +8,9 @@
 
 #import "PROJECTImpl.h"
 
-#import "TYModuleManager.h"
+#import "TYModule.h"
 
-#import "TPNavigationController.h"
+#import "TYNavigationController.h"
 
 #import "YourViewController.h"
 
@@ -24,6 +24,7 @@
 - (NSArray<NSString *> *)registModuleRoutes {
     
     // TODO: 返回你想要注册的路由
+    // TODO: return the routes you want to regist
     
     return @[
             @"your_route",
@@ -33,10 +34,11 @@
 /**
  路由回调，只会回调注册过的路由
  */
-- (BOOL)handleRouteWithSchema:(NSString *)schema host:(NSString *)host path:(NSString *)path params:(NSDictionary *)params {
+- (BOOL)handleRouteWithScheme:(NSString *)scheme host:(NSString *)host path:(NSString *)path params:(NSDictionary *)params {
     if ([host isEqualToString:@"your_route"]) {
         
         // TODO: 执行相应操作
+        // TODO: handle your route
         
         return YES;
     } else {
@@ -52,7 +54,7 @@
     UIViewController *pageVC = [YourViewController new];
     pageVC.title = @"HomePage";
     
-    TPNavigationController *navi = [[TPNavigationController alloc] initWithRootViewController:pageVC];
+    TYNavigationController *navi = [[TYNavigationController alloc] initWithRootViewController:pageVC];
     tabAttr.viewController = navi;
     
     // 配置tabItem的icon，可以根据需求自行控制RenderingMode
@@ -69,15 +71,5 @@
 }
 // tab相关回调，参考 <TYModuleTabRegisterProtocol>
 
-#pragma mark - <TYModuleNotifyRegisterProtocol>
-- (NSArray<NSString *> *)registRespondsNotifies {
-    return @[
-             NSStringFromSelector(@selector(your_notify_sel:)),
-             ];
-}
-
-- (void)your_notify_sel:(NSDictionary *)userInfo {
-    // TODO: 处理你注册的通知
-}
 
 @end

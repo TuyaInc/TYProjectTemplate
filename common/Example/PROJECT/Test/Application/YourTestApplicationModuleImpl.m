@@ -7,17 +7,27 @@
 
 //
 
-#import "YourTestApplicationModule.h"
+#import "YourTestApplicationModuleImpl.h"
 
-#import "TYModuleManager.h"
+#import "TYModule.h"
 
 #import "TYModuleMainLoginProtocol.h"
 
-@implementation YourTestApplicationModule
+@implementation YourTestApplicationModuleImpl
+
+- (UIWindow *)window {
+    if (![UIApplication sharedApplication].delegate.window) {
+        UIWindow *win = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        win.backgroundColor = [UIColor whiteColor];
+        [UIApplication sharedApplication].delegate.window = win;
+    }
+    return [UIApplication sharedApplication].delegate.window;
+}
+
 /**
  相当于AppDelegate.m中的didFinishLaunching回调
  */
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(nullable NSDictionary *)launchOptions config:(id<TYModuleConfigBlueprint>)config {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(nullable NSDictionary *)launchOptions {
     
     [self reloadRootViewController];
     
@@ -50,6 +60,10 @@
         self.window.rootViewController = rootVC;
         [self.window makeKeyAndVisible];
     }
+}
+
+- (UIViewController *)currentRootViewController {
+    return self.window.rootViewController;
 }
 
 #pragma mark - <UIApplicationDelegate>

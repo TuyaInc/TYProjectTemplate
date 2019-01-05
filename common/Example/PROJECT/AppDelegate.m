@@ -20,7 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    // 注册你的涂鸦sdk
+    // 注册涂鸦sdk      regist Tuya SDK with your key
     /*
      [[TuyaSmartSDK sharedInstance] startWithAppKey:@"your_tuya_app_key" secretKey:@"your_tuya_secret_key"];
      */

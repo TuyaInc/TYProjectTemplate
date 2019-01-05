@@ -1,5 +1,5 @@
 //
-//  YourTestApplicationModule.h
+//  YourTestApplicationModuleImpl.h
 //  PROJECT
 //
 //  Created by ${USER_NAME} on ${TODAYS_DATE}.
@@ -9,11 +9,12 @@
 
 #import <Foundation/Foundation.h>
 
-#import "TYModuleApplication.h"
+#import "TYModule.h"
 
 /**
  这是一个仅存在你本地的ApplicationModule
+ this is a test application module
  */
-@interface YourTestApplicationModule : TYModuleApplication
+@interface YourTestApplicationModuleImpl : NSObject<TYModuleApplicationBlueprint>
 
 @end
