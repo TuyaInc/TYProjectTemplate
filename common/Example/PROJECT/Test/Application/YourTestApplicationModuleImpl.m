@@ -9,9 +9,8 @@
 
 #import "YourTestApplicationModuleImpl.h"
 
-#import "TYModule.h"
-
 #import "TYModuleMainLoginProtocol.h"
+#import "TYNavigationController.h"
 
 @implementation YourTestApplicationModuleImpl
 
@@ -41,7 +40,7 @@
     UIViewController *rootVC;
     BOOL userDidLogin = YES;
     if (!userDidLogin) {
-        id loginModuleImpl = [[[TYModule configService] validClassOfConfigKeyPath:@"login"] new];
+        id loginModuleImpl = [TYModule serviceOfProtocol:@protocol(TYModuleMainLoginProtocol)];
         UIViewController *loginVC = [loginModuleImpl mainLoginViewController];
         loginVC.title = @"YourLoginVC";
     
@@ -56,10 +55,14 @@
 }
 
 - (void)resetRootViewController:(__kindof UIViewController *)rootVC {
-    if (rootVC && rootVC != self.window.rootViewController) {
-        self.window.rootViewController = rootVC;
-        [self.window makeKeyAndVisible];
+    UIViewController *vc;
+    if ([rootVC isKindOfClass:[UINavigationController class]] || [rootVC isKindOfClass:[UITabBarController class]]) {
+        vc = rootVC;
+    } else {
+        vc = [[TYNavigationController alloc] initWithRootViewController:rootVC];
     }
+    self.window.rootViewController = vc;
+    [self.window makeKeyAndVisible];
 }
 
 - (UIViewController *)currentRootViewController {

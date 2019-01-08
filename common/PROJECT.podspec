@@ -2,10 +2,10 @@ Pod::Spec.new do |s|
     s.name             = 'PROJECT'
     s.version          = '0.1.0'
     s.summary          = 'A short description of PROJECT.'
-    s.homepage         = 'https://gitlab.com/${GROUP_NAME}/PROJECT'
+    s.homepage         = '${GROUP_HOST}/${GROUP_NAME}/PROJECT'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { '${USER_NAME}' => '${USER_EMAIL}' }
-    s.source           = { :git => 'https://gitlab.com/${GROUP_NAME}/PROJECT.git', :tag => s.version.to_s }
+    s.source           = { :git => '${GROUP_HOST}/${GROUP_NAME}/PROJECT.git', :tag => s.version.to_s }
     
     s.ios.deployment_target = '8.0'
     

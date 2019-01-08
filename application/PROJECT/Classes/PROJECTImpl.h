@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-#import "TYModuleApplication.h"
+#import "TYModule.h"
 
-// Application模块 建议继承TYModuleApplication
-
-@interface PROJECTImpl : TYModuleApplication
+/**
+ 这是一个仅存在你本地的ApplicationModule
+ this is a test application module
+ */
+@interface PROJECTImpl : NSObject<TYModuleApplicationBlueprint>
 
 @end

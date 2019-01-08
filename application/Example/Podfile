@@ -1,5 +1,6 @@
-source 'https://github.com/CocoaPods/Specs.git' # cocoapods仓库
-source 'https://github.com/TuyaInc/TYPublicSpecs.git'   # 涂鸦的公开仓库
+source 'https://github.com/CocoaPods/Specs.git'         # master repo of cocoapods
+source 'https://github.com/TuyaInc/TYPublicSpecs.git'   # public spec repo of TuyaInc
+source 'https://code.registry.wgine.com/tuyaIOS/TYSpecs.git'
 # source '@{GROUP_SPEC}'
 
 platform :ios, '8.0'

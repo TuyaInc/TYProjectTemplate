@@ -8,9 +8,19 @@
 
 #import "PROJECTImpl.h"
 
-#import "TYModule.h"
+#import "TYModuleMainLoginProtocol.h"
+#import "TYNavigationController.h"
 
 @implementation PROJECTImpl
+
+- (UIWindow *)window {
+    if (![UIApplication sharedApplication].delegate.window) {
+        UIWindow *win = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        win.backgroundColor = [UIColor whiteColor];
+        [UIApplication sharedApplication].delegate.window = win;
+    }
+    return [UIApplication sharedApplication].delegate.window;
+}
 
 /**
  相当于AppDelegate.m中的didFinishLaunching回调
@@ -54,10 +64,18 @@
  重置rootVC
  */
 - (void)resetRootViewController:(__kindof UIViewController *)rootVC {
-    if (rootVC && rootVC != self.window.rootViewController) {
-        self.window.rootViewController = rootVC;
-        [self.window makeKeyAndVisible];
+    UIViewController *vc;
+    if ([rootVC isKindOfClass:[UINavigationController class]] || [rootVC isKindOfClass:[UITabBarController class]]) {
+        vc = rootVC;
+    } else {
+        vc = [[TYNavigationController alloc] initWithRootViewController:rootVC];
     }
+    self.window.rootViewController = vc;
+    [self.window makeKeyAndVisible];
+}
+
+- (UIViewController *)currentRootViewController {
+    return self.window.rootViewController;
 }
 
 #pragma mark - <UIApplicationDelegate>

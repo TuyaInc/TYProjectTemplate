@@ -119,18 +119,18 @@
 		37C36AC421746C4000E74199 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				37C36AC521746C4C00E74199 /* Module1 */,
+				37C36AC521746C4C00E74199 /* TabModule1 */,
 			);
 			path = Test;
 			sourceTree = "<group>";
 		};
-		37C36AC521746C4C00E74199 /* Module1 */ = {
+		37C36AC521746C4C00E74199 /* TabModule1 */ = {
 			isa = PBXGroup;
 			children = (
 				37C36AC621746C6A00E74199 /* YourTestModule.h */,
 				37C36AC721746C6A00E74199 /* YourTestModule.m */,
 			);
-			path = Module1;
+			path = TabModule1;
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -333,6 +333,7 @@
 				"${PODS_ROOT}/TYModuleManagerExample/TYModuleManagerExample/Assets/tab_guide_Icon@3x.png",
 				"${PODS_ROOT}/TYModuleManagerExample/TYModuleManagerExample/Assets/TYModuleManager_Guide.md",
 				"${PODS_ROOT}/TYModuleManagerExample/TYModuleManagerExample/Assets/TYServicesExample.storyboard",
+				"${PODS_ROOT}/TYUIKit/TYUIKit-0.1.2/Assets/TYUIKitRes.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
@@ -342,6 +343,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/tab_guide_Icon@3x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYModuleManager_Guide.md",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYServicesExample.storyboardc",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYUIKitRes.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
