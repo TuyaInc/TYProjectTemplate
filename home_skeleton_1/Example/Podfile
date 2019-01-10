@@ -1,0 +1,21 @@
+source 'https://github.com/CocoaPods/Specs.git' # cocoapods仓库
+source 'https://github.com/TuyaInc/TYPublicSpecs.git'   # 涂鸦的公开仓库
+# source '@{GROUP_SPEC}'
+
+platform :ios, '8.0'
+
+# 请把你的开发调试阶段使用的三方写在这里，业务必须依赖请写在*.podspec
+target 'PROJECT_Example' do
+    
+    # 当前正在开发的模块，以本地路径方式引入工程，方便与其它库统一管理方式
+    pod 'PROJECT', :path => '../'
+    
+    # 一个示例demo
+    pod 'TYModuleManagerExample'
+    
+    target 'PROJECT_Tests' do
+        inherit! :search_paths
+        
+    end
+    
+end
