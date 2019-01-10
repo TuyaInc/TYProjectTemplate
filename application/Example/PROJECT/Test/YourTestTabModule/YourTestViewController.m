@@ -1,19 +1,19 @@
 //
-//  YourViewController.m
+//  YourTestViewController.m
 //
 //  Created by ${USER_NAME} on ${TODAYS_DATE}.
 //  Copyright (c) ${TODAYS_YEAR} ${GROUP_NAME}. All rights reserved.
 //
 
-#import "YourViewController.h"
+#import "YourTestViewController.h"
 
-#import "TYUIKit.h"
+#import "UIViewController+TYNavigation.h"
 
-@interface YourViewController ()
+@interface YourTestViewController ()
 
 @end
 
-@implementation YourViewController
+@implementation YourTestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -1,15 +1,12 @@
 {
-  "scheme": "yourScheme",
-  "application": "YourTestApplicationModule",
-  "tabManager": "TYModuleTabManager",
   "tabs": [
-      "PROJECTImpl",
-      "TYGuideModuleImpl"
+      "PROJECT",
+      "TYGuideModule"
   ],
-  "tabSelect": "TYGuideModuleImpl",
+  "tabSelect": "TYGuideModule",
   "modules": [
-      "PROJECTImpl",
-      "TYGuideModuleImpl",
-      "TYNotifyModuleImpl"
+      "PROJECT",
+      "TYGuideModule",
+      "YourTestApplicationModule",
   ]
 }

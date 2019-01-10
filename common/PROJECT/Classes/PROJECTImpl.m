@@ -8,8 +8,7 @@
 
 #import "PROJECTImpl.h"
 
-#import "TYModule.h"
-
+#import "TYModuleManager.h"
 #import "TYNavigationController.h"
 
 #import "YourViewController.h"
@@ -33,6 +32,7 @@
 
 /**
  路由回调，只会回调注册过的路由
+ callback of routes that you regist
  */
 - (BOOL)handleRouteWithScheme:(NSString *)scheme host:(NSString *)host path:(NSString *)path params:(NSDictionary *)params {
     if ([host isEqualToString:@"your_route"]) {
@@ -50,26 +50,25 @@
 - (nullable NSArray<TYTabItemAttribute *> *)registModuleTabItems {
     TYTabItemAttribute *tabAttr = [TYTabItemAttribute new];
     
-    // 为tabItem配置viewController，根据需求自己包装navi
+    // 为tabItem配置viewController，并包装navi
+    // config view controller on tab, and package with navi
     UIViewController *pageVC = [YourViewController new];
-    pageVC.title = @"HomePage";
-    
     TYNavigationController *navi = [[TYNavigationController alloc] initWithRootViewController:pageVC];
     tabAttr.viewController = navi;
     
     // 配置tabItem的icon，可以根据需求自行控制RenderingMode
-    // UIImageRenderingModeAlwaysTemplate: 始终将图片作为模板，图片颜色受tintColor影响
-    // UIImageRenderingModeAlwaysOriginal: 始终将图片原样显示，图片颜色不受tintColor影响
-    // UIImageRenderingModeAutomatic: 根据场景判断图片的rRenderingMode，tabBar上icon为Template
+    // config tab icon and rendering mode
     tabAttr.normalImage = [[UIImage imageNamed:@"YourTabIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     tabAttr.selectedImage = [[UIImage imageNamed:@"YourTabIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     // 配置tabItem的title
-    tabAttr.itemTitle = @"home";
+    // config tab title
+    tabAttr.itemTitle = @"Hello";
     
     return @[tabAttr];
 }
-// tab相关回调，参考 <TYModuleTabRegisterProtocol>
 
+// tab相关回调 👉 <TYModuleTabRegisterProtocol>
+// more tab callback 👉 <TYModuleTabRegisterProtocol>
 
 @end

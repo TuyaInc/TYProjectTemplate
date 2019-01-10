@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		37C36AB521744E1400E74199 /* PROJECT.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 37C36AB421744E1400E74199 /* PROJECT.podspec */; };
 		37C36AC02174574900E74199 /* config_modules.json in Resources */ = {isa = PBXBuildFile; fileRef = 37C36ABF2174574800E74199 /* config_modules.json */; };
-		37C36ACF21747B0C00E74199 /* YourTestApplicationModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C36ACE21747B0C00E74199 /* YourTestApplicationModule.m */; };
+		37C36ACF21747B0C00E74199 /* YourTestApplicationModuleImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C36ACE21747B0C00E74199 /* YourTestApplicationModuleImpl.m */; };
 		37FBFDC821772229004910C3 /* config_modules reference.md in Resources */ = {isa = PBXBuildFile; fileRef = 37FBFDC721772229004910C3 /* config_modules reference.md */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -42,8 +42,8 @@
 		2D6238C23EDDBBF2B12641FD /* Pods-PROJECT_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PROJECT_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-PROJECT_Example/Pods-PROJECT_Example.release.xcconfig"; sourceTree = "<group>"; };
 		37C36AB421744E1400E74199 /* PROJECT.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PROJECT.podspec; path = ../PROJECT.podspec; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		37C36ABF2174574800E74199 /* config_modules.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = config_modules.json; sourceTree = "<group>"; };
-		37C36ACD21747B0C00E74199 /* YourTestApplicationModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YourTestApplicationModule.h; sourceTree = "<group>"; };
-		37C36ACE21747B0C00E74199 /* YourTestApplicationModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YourTestApplicationModule.m; sourceTree = "<group>"; };
+		37C36ACD21747B0C00E74199 /* YourTestApplicationModuleImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YourTestApplicationModuleImpl.h; sourceTree = "<group>"; };
+		37C36ACE21747B0C00E74199 /* YourTestApplicationModuleImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YourTestApplicationModuleImpl.m; sourceTree = "<group>"; };
 		37FBFDC721772229004910C3 /* config_modules reference.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "config_modules reference.md"; sourceTree = "<group>"; };
 		3DED22E876908D1944E32E8F /* Pods-PROJECT_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PROJECT_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PROJECT_Example/Pods-PROJECT_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		42AD1EE96E549773E31E690C /* libPods-PROJECT_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PROJECT_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,18 +119,18 @@
 		37C36AC421746C4000E74199 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				37C36AC921747AA300E74199 /* Application */,
+				37C36AC921747AA300E74199 /* YourTestApplicationModule */,
 			);
 			path = Test;
 			sourceTree = "<group>";
 		};
-		37C36AC921747AA300E74199 /* Application */ = {
+		37C36AC921747AA300E74199 /* YourTestApplicationModule */ = {
 			isa = PBXGroup;
 			children = (
-				37C36ACD21747B0C00E74199 /* YourTestApplicationModule.h */,
-				37C36ACE21747B0C00E74199 /* YourTestApplicationModule.m */,
+				37C36ACD21747B0C00E74199 /* YourTestApplicationModuleImpl.h */,
+				37C36ACE21747B0C00E74199 /* YourTestApplicationModuleImpl.m */,
 			);
-			path = Application;
+			path = YourTestApplicationModule;
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -329,19 +329,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PROJECT_Example/Pods-PROJECT_Example-resources.sh",
-				"${PODS_ROOT}/TYModuleManagerExample/TYModuleManagerExample/Assets/tab_guide_icon@2x.png",
-				"${PODS_ROOT}/TYModuleManagerExample/TYModuleManagerExample/Assets/tab_guide_Icon@3x.png",
-				"${PODS_ROOT}/TYModuleManagerExample/TYModuleManagerExample/Assets/TYModuleManager_Guide.md",
-				"${PODS_ROOT}/TYModuleManagerExample/TYModuleManagerExample/Assets/TYServicesExample.storyboard",
+				"${PODS_ROOT}/TYNavigationController/TYNavigationController/Assets/TYNavigationControllerRes.bundle",
+				"${PODS_ROOT}/TYUIKit/TYUIKit-0.1.2/Assets/TYUIKitRes.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/tab_guide_icon@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/tab_guide_Icon@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYModuleManager_Guide.md",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYServicesExample.storyboardc",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYNavigationControllerRes.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYUIKitRes.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -401,7 +397,7 @@
 			files = (
 				6003F59E195388D20070C39A /* AppDelegate.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				37C36ACF21747B0C00E74199 /* YourTestApplicationModule.m in Sources */,
+				37C36ACF21747B0C00E74199 /* YourTestApplicationModuleImpl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

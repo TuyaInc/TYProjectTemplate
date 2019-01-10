@@ -1,13 +1,12 @@
 {
-  "application": "YourTestApplicationModule",
   "tabs": [
-      "PROJECTImpl",
-      "TYGuideModuleImpl"
+      "PROJECT",
+      "TYGuideModule"
   ],
-  "tabSelect": "TYGuideModuleImpl",
+  "tabSelect": "TYGuideModule",
   "modules": [
-      "PROJECTImpl",
-      "TYGuideModuleImpl",
-      "TYNotifyModuleImpl"
+      "PROJECT",
+      "TYGuideModule",
+      "YourTestApplicationModuleImpl",
   ]
 }

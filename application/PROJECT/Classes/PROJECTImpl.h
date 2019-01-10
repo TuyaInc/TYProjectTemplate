@@ -8,12 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import "TYModule.h"
+#import "TYModuleManager.h"
 
-/**
- 这是一个仅存在你本地的ApplicationModule
- this is a test application module
- */
+// application module must conforms to protocol <TYModuleApplicationBlueprint>
 @interface PROJECTImpl : NSObject<TYModuleApplicationBlueprint>
 
 @end

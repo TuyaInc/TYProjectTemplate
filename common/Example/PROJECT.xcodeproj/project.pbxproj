@@ -119,18 +119,18 @@
 		37C36AC421746C4000E74199 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				37C36AC921747AA300E74199 /* Application */,
+				37C36AC921747AA300E74199 /* YourTestApplicationModule */,
 			);
 			path = Test;
 			sourceTree = "<group>";
 		};
-		37C36AC921747AA300E74199 /* Application */ = {
+		37C36AC921747AA300E74199 /* YourTestApplicationModule */ = {
 			isa = PBXGroup;
 			children = (
 				37C36ACD21747B0C00E74199 /* YourTestApplicationModuleImpl.h */,
 				37C36ACE21747B0C00E74199 /* YourTestApplicationModuleImpl.m */,
 			);
-			path = Application;
+			path = YourTestApplicationModule;
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -329,20 +329,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PROJECT_Example/Pods-PROJECT_Example-resources.sh",
-				"${PODS_ROOT}/../../../../TYModuleManagerExample/TYModuleManagerExample/Assets/tab_guide_icon@2x.png",
-				"${PODS_ROOT}/../../../../TYModuleManagerExample/TYModuleManagerExample/Assets/tab_guide_Icon@3x.png",
-				"${PODS_ROOT}/../../../../TYModuleManagerExample/TYModuleManagerExample/Assets/TYModuleManager_Guide.md",
-				"${PODS_ROOT}/../../../../TYModuleManagerExample/TYModuleManagerExample/Assets/TYServicesExample.storyboard",
+				"${PODS_ROOT}/TYNavigationController/TYNavigationController/Assets/TYNavigationControllerRes.bundle",
 				"${PODS_ROOT}/TYUIKit/TYUIKit-0.1.2/Assets/TYUIKitRes.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/tab_guide_icon@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/tab_guide_Icon@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYModuleManager_Guide.md",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYServicesExample.storyboardc",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYNavigationControllerRes.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TYUIKitRes.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,10 +526,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PROJECT/PROJECT-Prefix.pch";
 				INFOPLIST_FILE = "PROJECT/PROJECT-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tuya.template.common;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -549,10 +544,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PROJECT/PROJECT-Prefix.pch";
 				INFOPLIST_FILE = "PROJECT/PROJECT-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tuya.template.common;
 				PRODUCT_NAME = "$(TARGET_NAME)";

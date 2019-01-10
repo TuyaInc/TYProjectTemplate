@@ -1,5 +1,5 @@
 //
-//  YourTestModule.h
+//  YourTestTabModuleImpl.h
 //  PROJECT
 //
 //  Created by ${USER_NAME} on ${TODAYS_DATE}.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YourTestModule : NSObject
+@interface YourTestTabModuleImpl : NSObject
 
 @end
 

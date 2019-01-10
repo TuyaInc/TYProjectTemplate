@@ -8,7 +8,17 @@
 
 #import "AppDelegate.h"
 
+#import <TuyaSmartBaseKit/TuyaSmartSDK.h>
+#import <TuyaSmartBaseKit/TuyaSmartUser.h>
+
 #import "TYModuleManager.h"
+
+static NSString * const kDebugSDKInfo_AppKey = @"";
+static NSString * const kDebugSDKInfo_SecretKey = @"";
+
+static NSString * const kDebugCountInfo_CountryCode = @"";
+static NSString * const kDebugCountInfo_PhoneNumber = @"";
+static NSString * const kDebugCountInfo_Password = @"";
 
 /**
  AppDelegate是一个只存在于你本地的类，它不会被合并到涂鸦的工程当中
@@ -20,18 +30,36 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    // 注册你的涂鸦sdk
-    /*
-     [[TuyaSmartSDK sharedInstance] startWithAppKey:@"your_tuya_app_key" secretKey:@"your_tuya_secret_key"];
-     */
+    if (kDebugSDKInfo_AppKey.length == 0 || kDebugSDKInfo_SecretKey.length == 0) {
+        [[TYModuleManager sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+        return YES;
+    }
     
+    // 注册涂鸦sdk
+    // regist Tuya SDK with your key
+    [[TuyaSmartSDK sharedInstance] startWithAppKey:kDebugSDKInfo_AppKey secretKey:kDebugSDKInfo_SecretKey];
     
-    /*
-     调用TYModuleManager，启动模块化加载
-     TYModuleManager会为你提供一些符合涂鸦模块化标准的服务
-     这些服务能够帮助你更好的完成开发
-     */
-    [[TYModuleManager sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+    // 调试登录
+    // login for debug
+    
+    if (![TuyaSmartUser sharedInstance].isLogin) {
+        NSLog(@"login ...");
+        [[TuyaSmartUser sharedInstance] loginByPhone:kDebugCountInfo_CountryCode phoneNumber:kDebugCountInfo_PhoneNumber password:kDebugCountInfo_Password success:^{
+            NSLog(@"login success");
+            [[TYModuleManager sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+        } failure:^(NSError *error) {
+            NSString *msg = [NSString stringWithFormat:@"login fail %@", error];
+            NSAssert(!error, msg);
+        }];
+    } else {
+        /*
+         调用TYModuleManager，启动模块化加载
+         TYModuleManager会为你提供一些符合涂鸦模块化标准的服务
+         这些服务能够帮助你更好的完成开发
+         */
+        
+        [[TYModuleManager sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+    }
     
     return YES;
 }
@@ -44,8 +72,8 @@
 
 #pragma mark - Forward
 /*
- 将UIAppDelegate中的方法转发给application模块 (描述为"服务"会更准确，无需在意)
- 涂鸦工程的AppDelegate没有包含任何<UIApplicationDelegate>方法，所有<UIApplicationDelegate>方法均会转发
+ 将UIAppDelegate中的方法转发给application模块
+ 涂鸦工程的AppDelegate.m没有包含任何<UIApplicationDelegate>方法，所有<UIApplicationDelegate>方法均会转发
  
  转发只发生在AppDelegate.m中找不到方法，实际上AppDelegate.m中方法优先级更高
  所以开发调试阶段的代码可以直接写在AppDelegate.m

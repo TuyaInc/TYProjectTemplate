@@ -1,19 +1,19 @@
 //
-//  PROJECTImpl.m
+//  YourApplicationModule.m
 //  PROJECT
 //
 //  Created by ${USER_NAME} on ${TODAYS_DATE}.
 //  Copyright (c) ${TODAYS_YEAR} ${GROUP_NAME}. All rights reserved.
 //
 
-#import "PROJECTImpl.h"
+#import "YourTestApplicationModuleImpl.h"
 
 #import <TuyaSmartBaseKit/TuyaSmartUser.h>
 
 #import "TYModuleMainLoginProtocol.h"
 #import "TYNavigationController.h"
 
-@implementation PROJECTImpl
+@implementation YourTestApplicationModuleImpl
 
 #pragma mark - <TYModuleApplicationBlueprint>
 

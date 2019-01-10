@@ -4,15 +4,18 @@
 //
 //  Created by ${USER_NAME} on ${TODAYS_DATE}.
 //  Copyright (c) ${TODAYS_YEAR} ${GROUP_NAME}. All rights reserved.
-
 //
 
 #import "YourTestApplicationModuleImpl.h"
+
+#import <TuyaSmartBaseKit/TuyaSmartUser.h>
 
 #import "TYModuleMainLoginProtocol.h"
 #import "TYNavigationController.h"
 
 @implementation YourTestApplicationModuleImpl
+
+#pragma mark - <TYModuleApplicationBlueprint>
 
 - (UIWindow *)window {
     if (![UIApplication sharedApplication].delegate.window) {
@@ -25,6 +28,7 @@
 
 /**
  相当于AppDelegate.m中的didFinishLaunching回调
+ equivalent to didFinishLaunching method in AppDelegate.m
  */
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(nullable NSDictionary *)launchOptions {
     
@@ -34,21 +38,29 @@
 }
 
 - (void)reloadRootViewController {
-    // 你可以在这里处理一些自己的逻辑，并加载正确的rootVC
     
-    // 此处简单示意根据用户是否登录显式不同的rootVC
+    BOOL kDebugLogin = NO;
+#ifdef DEBUG
+    kDebugLogin = [[[NSUserDefaults standardUserDefaults] valueForKey:@"TestUserIsLogin"] boolValue];
+#endif
+    
     UIViewController *rootVC;
-    BOOL userDidLogin = YES;
-    if (!userDidLogin) {
-        id loginModuleImpl = [TYModule serviceOfProtocol:@protocol(TYModuleMainLoginProtocol)];
-        UIViewController *loginVC = [loginModuleImpl mainLoginViewController];
-        loginVC.title = @"YourLoginVC";
-    
-        rootVC = loginVC;
-    } else {
+    if ([TuyaSmartUser sharedInstance].isLogin || kDebugLogin) {
         // 通过 TYModule 提供的快捷方法获取 tabService，并通过 tabService 获取 tabBarController
-        UIViewController *tabVC = [TYModule tabService].tabBarController;
-        rootVC = tabVC;
+        // get tab controller by tab service
+        id<TYModuleTabBarBlueprint> tabService = [TYModule tabService];
+        if (tabService.tabItemAttributes.count == 0) {
+            rootVC = [UIViewController new];
+        } else if (tabService.tabItemAttributes.count == 1) {
+            rootVC = tabService.tabItemAttributes[0].viewController;
+        } else {
+            rootVC = tabService.tabBarController;
+        }
+    } else {
+        // 获取登录模块以及登录模页面控制器
+        // get login module and login view controller
+        id loginModuleImpl = [TYModule serviceOfProtocol:@protocol(TYModuleMainLoginProtocol)];
+        rootVC = [loginModuleImpl mainLoginViewController];
     }
     
     [self resetRootViewController:rootVC];
@@ -70,6 +82,7 @@
 }
 
 #pragma mark - <UIApplicationDelegate>
+
 
 
 @end
