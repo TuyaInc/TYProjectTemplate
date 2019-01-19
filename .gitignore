@@ -2,3 +2,4 @@
 */Example/Podfile.lock
 */Example/*.xcworkspace
 *.xcuserdata/
+.idea/

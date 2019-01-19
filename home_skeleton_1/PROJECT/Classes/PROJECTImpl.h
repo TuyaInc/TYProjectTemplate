@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TYSHUISkeletonBindable.h"
 
-@interface PROJECTImpl : NSObject
+@interface PROJECTImpl : NSObject <TYSHUISkeletonBindable>
 
 @end

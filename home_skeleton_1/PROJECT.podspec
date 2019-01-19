@@ -12,17 +12,22 @@ Pod::Spec.new do |s|
     # 源文件
     s.source_files = 'PROJECT/Classes/**/*'
     # 资源文件
-    # s.resources = ['PROJECT/Assets/*.{png,xib,storyboard,md,plist,xcassets,bundle}']
+    s.resource_bundles = {
+        'PROJECT_UISkin' => ['PROJECT/Assets/*']
+    }
     
     # s.public_header_files = 'PROJECT/Classes/**/*.h'
     # s.frameworks = 'UIKit', 'MapKit'
     
     # 请把你的业务必须依赖写在这里，仅开发调试阶段使用的三方写在Podfile
-    s.dependency 'TYModuleManager'    # 涂鸦的模块化工具
-    s.dependency 'TuyaSmartHomeKit'   # 涂鸦智能SDK
-    s.dependency 'TYModuleServices'   # 涂鸦的业务开放的服务，如果未使用，可以去除
-    s.dependency 'TYUIKit'            # 涂鸦开放的UI组件，如果未使用，可以去除
+    s.dependency 'TYSmartHouseUISkeleton'   # 涂鸦首页的 UI 骨架，这里定义了你所需实现的各种视图
+    s.dependency 'TYUIKit'                  # 涂鸦开放的UI组件，如果未使用，可以去除
     
-    # s.dependency 'Masonry'
-    
+    s.prefix_header_contents = <<-EOS
+    #import "EXTScope.h"
+    #import "TYUIKit.h"
+    #import "NSArray+TYSafe.h"
+    #import "UIImage+PROJECT_Bundle.h"
+    #import "TYUIKit.h"
+    EOS
 end

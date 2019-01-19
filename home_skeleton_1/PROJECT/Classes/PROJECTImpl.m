@@ -7,67 +7,87 @@
 //
 
 #import "PROJECTImpl.h"
-
-#import "TYModuleManager.h"
-
-#import "TPNavigationController.h"
-
-#import "YourHomeViewController.h"
-
-@interface PROJECTImpl () <TYModuleRouteRegisterProtocol, TYModuleTabRegisterProtocol>
-
-@end
+#import "TYSHUIBinder.h"
+#import "PROJECT_RemoveMe.h"
 
 @implementation PROJECTImpl
 
-#pragma mark - <TYModuleRouteRegisterProtocol>
-- (NSArray<NSString *> *)registModuleRoutes {
-    
-    // TODO: 返回你想要注册的路由
-    
-    return @[
-            @"your_route",
-            ];
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        /**
+         * 模块初始化时，进行首页皮肤与骨架的绑定
+         */
+        [TYSHUIBinder bindUISkin:self];
+    }
+    return self;
 }
 
 /**
- 路由回调，只会回调注册过的路由
+ * 以下方法用来返回对应首页视图协议的实现类
+ *
+ * 假设单行设备的实现类为 XXXDeviceNormalView，则找到 -viewClassForDeviceNormalSkeleton 方法，替换以下内容：
+ *
+ *  - (Class)viewClassForDeviceNormalSkeleton {
+ *      return [XXXDeviceNormalView class];
+ *  }
+ *
+ * 若某些视图不需要则直接 "return nil;" 即可
  */
-- (BOOL)handleRouteWithSchema:(NSString *)schema host:(NSString *)host path:(NSString *)path params:(NSDictionary *)params {
-    if ([host isEqualToString:@"your_route"]) {
-        
-        // TODO: 执行相应操作
-        
-        return YES;
-    } else {
-        return NO;
-    }
+
+// 返回单行设备 Cell 视图
+- (Class)viewClassForDeviceNormalSkeleton {
+    //TODO: replace me.
+    return [PROJECT_RemoveMe demoViewWithProtocol:NSProtocolFromString(@"TYSHDeviceNormalCellIViewComponent")];
 }
 
-#pragma mark - <TYModuleTabRegisterProtocol>
-- (nullable NSArray<TYTabItemAttribute *> *)registModuleTabItems {
-    TYTabItemAttribute *tabAttr = [TYTabItemAttribute new];
-    
-    // 为tabItem配置viewController，根据需求自己包装navi
-    UIViewController *pageVC = [YourHomeViewController new];
-    pageVC.title = @"HomePage";
-    
-    TPNavigationController *navi = [[TPNavigationController alloc] initWithRootViewController:pageVC];
-    tabAttr.viewController = navi;
-    
-    // 配置tabItem的icon，可以根据需求自行控制RenderingMode
-    // UIImageRenderingModeAlwaysTemplate: 始终将图片作为模板，图片颜色受tintColor影响
-    // UIImageRenderingModeAlwaysOriginal: 始终将图片原样显示，图片颜色不受tintColor影响
-    // UIImageRenderingModeAutomatic: 根据场景判断图片的rRenderingMode，tabBar上icon为Template
-    tabAttr.normalImage = [[UIImage imageNamed:@"YourTabIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    tabAttr.selectedImage = [[UIImage imageNamed:@"YourTabIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
-    // 配置tabItem的title
-    tabAttr.itemTitle = @"home";
-    
-    return @[tabAttr];
+// 返回设备分享列表头部操作栏
+- (Class)viewClassForDeviceShareTipSkeleton {
+    //TODO: replace me.
+    return [PROJECT_RemoveMe demoViewWithProtocol:NSProtocolFromString(@"TYSHDeviceShareTipCellIViewComponent")];
 }
 
-// tab相关回调，参考 <TYModuleTabRegisterProtocol>
+// 返回一行两设备 Cell 视图
+- (Class)viewClassForDeviceSimpleSkeleton {
+    //TODO: replace me.
+    return [PROJECT_RemoveMe demoViewWithProtocol:NSProtocolFromString(@"TYSHDeviceSimpleCellIViewComponent")];
+}
+
+// 返回设备列表为空时的提示视图
+- (Class)viewClassForDeviceEmptyTipSkeleton {
+    //TODO: replace me.
+    return [PROJECT_RemoveMe demoViewWithProtocol:NSProtocolFromString(@"TYSHDeviceListEmptyTipViewComponent")];
+}
+
+// 返回首页头部第一部分
+- (Class)viewClassForHeader1stSkeleton {
+    //TODO: replace me.
+    return [PROJECT_RemoveMe demoViewWithProtocol:NSProtocolFromString(@"TYSHHeader1stIViewComponent")];
+}
+
+// 返回首页头部第二部分
+- (Class)viewClassForHeader2ndSkeleton {
+    //TODO: replace me.
+    return [PROJECT_RemoveMe demoViewWithProtocol:NSProtocolFromString(@"TYSHHeader2ndIViewComponent")];
+}
+
+// 返回首页头部第三部分
+- (Class)viewClassForHeader3rdSkeleton {
+    //TODO: replace me.
+    return [PROJECT_RemoveMe demoViewWithProtocol:NSProtocolFromString(@"TYSHHeader3rdIViewComponent")];
+}
+
+// 返回房间切换控制栏视图
+- (Class)viewClassForTabHoverSkeleton {
+    //TODO: replace me.
+    return [PROJECT_RemoveMe demoViewWithProtocol:NSProtocolFromString(@"TYSHTabHoverIViewComponent")];
+}
+
+// 返回顶部操作栏视图
+- (Class)viewClassForTopBarSkeleton {
+    //TODO: replace me.
+    return [PROJECT_RemoveMe demoViewWithProtocol:NSProtocolFromString(@"TYSHTopBarIViewComponent")];
+}
+
 
 @end
