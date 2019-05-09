@@ -10,6 +10,9 @@ target 'PROJECT_Example' do
   # 当前正在开发的模块，以本地路径方式引入工程，方便与其它库统一管理方式
   pod 'PROJECT', :path => '../'
 
+  # 一些示例
+  pod 'TYModuleManagerExample'
+
 
   target 'PROJECT_Tests' do
     inherit! :search_paths
