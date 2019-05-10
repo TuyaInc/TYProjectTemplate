@@ -8,10 +8,12 @@
 
 #import "PROJECTImpl.h"
 
-#import "TYModuleManager.h"
+#import <TuyaSmartBaseKit/TuyaSmartBaseKit.h>
+#import "TYModule.h"
 #import "TYNavigationController.h"
 
 #import "TYModuleMainLoginProtocol.h"
+#import "TYModuleLoginNotifyProtocol.h"
 
 #import "YourLoginViewController.h"
 
@@ -32,7 +34,6 @@
 - (UIViewController *)mainLoginViewController {
     
     // TODO: 返回你的登录页面实例，如果有必要，请用navi包裹
-    // TODO: return your login view controller, and package with navi if necessary
     UIViewController *loginVC = [YourLoginViewController new];
     TYNavigationController *navi = [[TYNavigationController alloc] initWithRootViewController:loginVC];
     
@@ -43,23 +44,34 @@
 - (NSArray<NSString *> *)registModuleRoutes {
     
     // TODO: 返回你想要注册的路由
-    // TODO: return the routes you want to regist
-    
     return @[
-             @"your_route",
+             @"ty_signout",
+             @"your_route"
              ];
 }
 
 /**
  路由回调，只会回调注册过的路由
- callback of routes that you regist
  */
 - (BOOL)handleRouteWithScheme:(NSString *)scheme host:(NSString *)host path:(NSString *)path params:(NSDictionary *)params {
-    if ([host isEqualToString:@"your_route"]) {
-        
+    // 用户点击退出登录按钮
+    if ([host isEqualToString:@"ty_signout"]) {
+        if ([TuyaSmartUser sharedInstance].isLogin) {
+            // show HUD
+            [[TuyaSmartUser sharedInstance] loginOut:^{
+                // hide HUD
+                [[TYModule notifyService] triggerNotify:@selector(userDidLogOut) withUserInfo:nil];
+                [[TYModule applicationService] reloadRootViewController];
+            } failure:^(NSError *error) {
+                // hide HUD
+            }];
+        } else {
+            [[TYModule notifyService] triggerNotify:@selector(userDidLogOut) withUserInfo:nil];
+            [[TYModule applicationService] reloadRootViewController];
+        }
+        return YES;
+    } else if ([host isEqualToString:@"your_route"]) {
         // TODO: 执行相应操作
-        // TODO: handle your route
-        
         return YES;
     } else {
         return NO;

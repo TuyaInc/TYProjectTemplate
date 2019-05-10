@@ -8,8 +8,10 @@
 
 #import "YourLoginViewController.h"
 
-#import "TYModuleManager.h"
+#import "TYModule.h"
 #import "TYUIKit.h"
+
+#import "TYModuleLoginNotifyProtocol.h"
 
 @interface YourLoginViewController ()
 
@@ -33,14 +35,13 @@
     [self.view addSubview:loginBtn];
     loginBtn.center = CGPointMake([UIScreen mainScreen].bounds.size.width/2.0, [UIScreen mainScreen].bounds.size.height/2.0);
     
-    // setup navigation bar with TYNavigationController module
+    // setup navigation bar with TYNavigationController
     [self setupNavi];
 }
 
 - (void)setupNavi {
     // ty_topBarxxxx means this method only effect on current view controller
     self.ty_topBarBackgroundAlpha = 0;
-    self.ty_topBarSeperatorAlpha = 0;
     self.ty_topBarCenterItem = [TYNavigationBarItem itemWithMaker:^(TYNavigationBarItemMaker *maker) {
         maker.normalTitle(@"LoginPage").titleFont([UIFont boldSystemFontOfSize:17]).normalTintColor([UIColor blackColor]);
     }];
@@ -49,6 +50,8 @@
 - (void)loginAction {
     [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:@"TestUserIsLogin"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [[TYModule notifyService] triggerNotify:@selector(userDidLoginSuccess) withUserInfo:nil];
     [[TYModule applicationService] reloadRootViewController];
 }
 
